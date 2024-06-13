@@ -1,0 +1,48 @@
+@import "../../scss/defaults.scss";
+
+.car {
+    @include createFlex(flex, center, center, column, wrap);
+    border: 1px solid red;
+    width: 25%;
+    height: auto;
+    gap: 20px;
+    img {
+        width: 100%;
+    }
+    .car__info {
+        @include createFlex(flex, space-around, center, row, wrap);
+        border: 1px solid blue;
+        width: 100%;
+        img {
+            width: 2vw;
+        }
+        .icon {
+            width: 4vw;
+        }
+    }
+    .rent_button {
+        color: #fff;
+        background-color: #F81B1B;
+        padding: 1em;
+        border-radius: 10px 20px;
+        margin-bottom: 20px;
+        transition: 300ms ease-in-out;
+        &:hover {
+            background-color: #fff;
+            color: #F81B1B;
+            border: 1px solid #F81B1B;
+        }
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .car {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .car {
+        width: 50%;
+    }
+}

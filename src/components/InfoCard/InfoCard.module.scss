@@ -1,0 +1,37 @@
+@import "../../scss/defaults.scss";
+
+.card {
+  @include createFlex(flex, space-evenly, center, column, wrap);
+  width: 33%;
+  color: rgb(230, 226, 226);
+  padding: 2em;
+  border: 1em solid rgb(255, 255, 255);
+  background: rgb(9, 9, 121);
+  background: linear-gradient(
+    90deg,
+    rgba(9, 9, 121, 1) 0%,
+    rgba(0, 212, 255, 1) 96%
+  );
+  p {
+    font-size: 24px;
+  }
+  .card__info {
+    @include createFlex(flex, center, center, column, wrap);
+    gap: 20px;
+  }
+  .card__image {
+    width: 40%;
+    margin-top: 2em;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .card {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+}

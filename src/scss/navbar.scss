@@ -1,0 +1,49 @@
+@import "./defaults.scss";
+
+nav {
+  @include createFlex(flex, space-around, center, 0, 0);
+  padding: 1.25em;
+  width: 100%;
+  background-color: white;
+  button {
+    display: none;
+  }
+  ul {
+    @include createFlex(flex, space-around, center, 0, 0);
+    width: 30%;
+    list-style: none;
+    font-size: 17px;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+button {
+  @include buttonReset;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  nav {
+    ul {
+      display: none;
+    }
+    button {
+      display: block;
+    }
+  }
+  .nav-responsive {
+    height: 100vh;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    ul {
+      display: flex;
+      flex-direction: column;
+      height: 50vh;
+    }
+  }
+}

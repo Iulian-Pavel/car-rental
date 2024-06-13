@@ -1,0 +1,17 @@
+@import "../../scss/defaults.scss";
+
+.dashboard {
+    @include createFlex(flex, space-around, center, row, 0);
+    gap: 20px;
+    width: 100%;
+    border: 1px solid red;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: rgb(245, 245, 245);
+}
+
+@media screen and (max-width: 900px) {
+    .dashboard {
+        flex-direction: column;
+    }
+}

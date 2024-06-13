@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/R8_Coupe_V10_performance-1.jpg/1280px-R8_Coupe_V10_performance-1.jpg",
+        "name": "Audi",
+        "model": "R8",
+        "year": "2008",
+        "transmission": "Manual",
+        "fuel": "Diesel",
+        "status": "available"
+    },
+    {
+        "id": 2,
+        "image": "../src/assets/logo.jpg",
+        "name": "Mercedes"
+    },
+    {
+        "id": 3,
+        "image": "../src/assets/logo.jpg",
+        "name": "Bmw"
+    },
+    
+    {
+        "id": 4,
+        "image": "../src/assets/logo.jpg",
+        "name": "Bmw"
+    },
+    {
+        "id": 5,
+        "image": "../src/assets/logo.jpg",
+        "name": "Bmw"
+    }
+]
