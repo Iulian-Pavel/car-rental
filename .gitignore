@@ -8,7 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-public/TODO.todo
+public/TODO.md
 dist
 dist-ssr
 *.local
