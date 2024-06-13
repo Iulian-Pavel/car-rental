@@ -1,4 +1,4 @@
-# Create GIT repository for this project
+# ~~Create GIT repository for this project~~
 # ~~Fix the navbar menu for different dimensions and widths~~
 # ~~Fix the car blob for mobile view (increasing the width should help)~~
 ~~# Create the Our Fleet page~~
