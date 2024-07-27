@@ -8,7 +8,6 @@ import close_btn from "./nav_assets/close_menu.svg";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
   return (
     <>
       <nav className={isOpen ? "nav-responsive" : ""}>
