@@ -1,7 +1,6 @@
 @import "../scss/defaults.scss";
 
-.OurFleet__carFleet {
+.fleet {
     @include createFlex(flex, space-evenly, center, row, wrap);
     gap: 20px;
-    // border: 1px solid red;
 }
