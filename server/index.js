@@ -21,34 +21,74 @@ db.once("open", () => {
   console.log("Sucessfully connected to the database");
 });
 
-app.get("/insert", async (req, res) => {
-  const car = new CarModel({
-    id: 1,
-    Make: "Audi",
-    Model: "R8",
-    Year: "2008",
-    Transmission: "Manual",
-    Fuel: "Diesel",
+const getCarDataFromBody = (body) => {
+  return {
+    Make: body.make,
+    Model: body.model,
+    Year: body.year,
+    Transmission: body.transmissionType,
+    Fuel: body.fuelType,
     Status: true,
-    Image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/R8_Coupe_V10_performance-1.jpg/1280px-R8_Coupe_V10_performance-1.jpg"
-  });
+    Image: body.linkToImage,
+    Price: body.price,
+  };
+};
+
+app.post("/insert", async (req, res) => {
+  const carDetails = getCarDataFromBody(req.body);
+
+  const car = new CarModel(carDetails);
+
   try {
     await car.save();
     res.send("car saved in db");
   } catch (error) {
     console.log(`Erorr while saving car to the database: ${error}`);
+    res.status(500).json({ error: `Error while inserting car into the db ${error}` })
   }
 });
 
 app.get("/retrieve", async (req, res) => {
   try {
-   const cars = await CarModel.find({});
+    const cars = await CarModel.find({});
     res.status(200).json(cars);
   } catch (error) {
     console.log(`Error while retrieving cars from the database ${error}`);
-    res.status(500).json({error: "Error while retrieving cars from the database"})
+    res
+      .status(500)
+      .json({ error: error.message });
   }
 });
+
+app.delete("/remove", async (req, res) => {
+  try {
+    const make = req.body.make;
+    const model = req.body.model;
+    const year = req.body.year;
+    await CarModel.deleteOne({ Make: make, Model: model, Year: year });
+    res.status(200).send("Car deleted successfully");
+  } catch (error) {
+    console.log(`Error while deleting car: ${error}`);
+    res.status(500).json({ error: `Error while removing car from db ${error}` });
+  }
+});
+
+// app.update("/edit", async (req, res) => {
+//   /*
+//   */
+//   try {
+//     // const filter = { make: make, model: model };
+//     // const options = { upsert: false };
+//     // const updateDoc = {
+//     //   $set: {
+//     //    // All variables that need to be edited will go here
+//     //   }
+//     // }
+//     // const result = CarModel.updateOne(filter, updateDoc, options)
+//   } catch (error) {
+//     console.log(`Error while editing vehicle data: ${error}`);
+//   }
+// });
 
 app.listen(3001, () => {
   console.log(`Running on port 3001`);

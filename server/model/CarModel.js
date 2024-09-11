@@ -2,11 +2,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const carSchema = new Schema({
-    id: {
-        type: Number,
-        unique: true,
-        required: true
-    },
     Make: {
         type: String,
         required: [true, "Make of the car is required"]
@@ -33,6 +28,10 @@ const carSchema = new Schema({
     },
     Image: {
         type: String,
+        required: true
+    },
+    Price: {
+        type: Number,
         required: true
     }
 });

@@ -4,3 +4,7 @@
     @include createFlex(flex, space-evenly, center, row, wrap);
     gap: 20px;
 }
+
+.errorD {
+    text-align: center;
+}
