@@ -12,16 +12,16 @@ function OurFleet() {
     const fetchCarData = async () => {
       try {
         const response = await Axios.get("http://localhost:3001/retrieve");
-        setCarData(response.data);
-        console.log(carData);
-        if (carData.length !== 0) {
-          setError(null);
-        } else {
+        const data = response.data;
+        if (data.length === 0) {
           setError("There are no cars available at this moment");
+        } else {
+          setCarData(data);
+          setError(null); // Clear any previous errors
         }
       } catch (error) {
-        console.log(`Error fetching car data ${error}`);
-        setError(error);
+        console.log(`Error fetching car data: ${error}`);
+        setError("Error fetching car data");
       }
     };
     fetchCarData();
@@ -34,18 +34,18 @@ function OurFleet() {
         <p>{error}</p>
       ) : (
         <div className={fleet}>
-        {carData.map((car, key) => (
-          <CarContainer
-            make={car.Make}
-            model={car.Model}
-            key={key}
-            transmission={car.Transmission}
-            year={car.Year}
-            fuel={car.Fuel}
-            image={car.Image}
-          />
-        ))}
-      </div> 
+          {carData.map((car, key) => (
+            <CarContainer
+              make={car.Make}
+              model={car.Model}
+              key={key}
+              transmission={car.Transmission}
+              year={car.Year}
+              fuel={car.Fuel}
+              image={car.Image}
+            />
+          ))}
+        </div>
       )}
     </>
   );
