@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import InfoCard from "../../components/InfoCard/InfoCard";
 import Axios from "axios";
+import axiosInstance from "../../utils/interceptors";
 import {
   dashboard,
   button,
@@ -12,6 +13,7 @@ import {
 import placeholder from "../../../images/placeholder.jpg";
 
 function Admin() {
+
   const [isModalOpen, setIsModalOpen] = useState("false");
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState("false");
   const [make, setMake] = useState("");
@@ -21,9 +23,11 @@ function Admin() {
   const [transmissionType, setTransimissionType] = useState("");
   const [price, setPrice] = useState("");
   const [linkToImage, setLinkToImage] = useState("");
+
   const addCar = async () => {
+    let carData;
     try {
-      const response = await Axios.post("http://localhost:3001/insert", {
+      carData = {
         make: make,
         model: model,
         year: year,
@@ -31,12 +35,12 @@ function Admin() {
         transmissionType: transmissionType,
         price: price,
         linkToImage: linkToImage,
-      });
-      console.log("Car added succesfully", response.data);
-    } catch (error) {
-      console.log(`An error has occured when talking to server ${error}`);
+      }
+      const response = await axiosInstance.post("/insert", carData);
+    } catch(error) {
+      console.log("An error occured while inserting car ", error);
     }
-  };
+  }
 
   const removeCar = async () => {
     try {
