@@ -1,0 +1,112 @@
+@import "../../scss/defaults.scss";
+
+h1 {
+  text-align: center;
+}
+
+.car_display {
+  @include createFlex(flex, center, center, 0, wrap);
+  color: red;
+  padding: 2em;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10%;
+  background: rgba(255, 255, 255, 0.37);
+  border-radius: 16px;
+
+  .buttons,
+  .images {
+    flex: 1;
+    @include createFlex(flex, space-around, center, column, wrap);
+    height: auto;
+  }
+
+  .buttons {
+    justify-content: space-around;
+    height: 40vh;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background-color: white;
+
+    .button{
+      opacity: 1;
+      outline: 0;
+      color: #fff;
+      line-height: 40px;
+      position: relative;
+      text-align: center;
+      letter-spacing: 1px;
+      display: inline-block;
+      text-decoration: none;
+      font-family: 'Open Sans';
+      text-transform: uppercase;
+      
+      &:hover{
+        
+        &:after{
+          opacity: 1;
+          transform: translateY(0) rotateX(0);
+        }
+        
+        &:before{
+          opacity: 0;
+          transform: translateY(50%) rotateX(90deg);
+        }
+      }
+      
+      &:after{
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 100%;
+        color: #323237;
+        display: block;
+        transition: 0.5s;
+        position: absolute;
+        background: #adadaf;
+        content: attr(data-back);
+        transform: translateY(-50%) rotateX(90deg);
+      }
+      
+      &:before{
+        top: 0;
+        left: 0;
+        opacity: 1;
+        color: #adadaf;
+        display: block;
+        padding: 0 30px;
+        line-height: 40px;
+        transition: 0.5s;
+        position: relative;
+        background: #323237;
+        content: attr(data-front);
+        transform: translateY(0) rotateX(0);
+      }
+    }
+  }
+
+    .images {
+      // border: 1px solid blue;
+      flex-direction: column !important;
+      height: 55vh;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        transition: 300ms ease-in-out;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+    }
+  }
+
+  .fadeImage {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  img:not(.fadeImage) {
+    opacity: 1;
+    transform: scale(1);
+  }
