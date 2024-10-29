@@ -30,7 +30,7 @@ function CarDisplay() {
       <div className={car_display}>
         <div className={buttons}>
           {carData.map((car, key) => (
-            <button key={key} onClick={() => handleCarChange(car)} data-back={car.price} data-front={car.name} className={button}>
+            <button key={key} onClick={() => handleCarChange(car)} data-front={car.name} data-back={car.price} className={button}>
             </button>
           ))}
         </div>
