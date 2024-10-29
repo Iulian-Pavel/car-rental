@@ -24,10 +24,11 @@ h1 {
 
   .buttons {
     justify-content: space-around;
-    height: 40vh;
+    // height: 40vh;
     border-radius: 16px;
     background-color: white;
-    box-shadow: 0 4px 35px rgba(244, 242, 242, 0.4);
+    padding: 2em;
+    box-shadow: 0 4px 35px rgba(244, 242, 242, 1);
 
 
     .button {
@@ -40,6 +41,7 @@ h1 {
       display: inline-block;
       text-decoration: none;
       text-transform: uppercase;
+      margin: 1em;
       &:hover {
         &:after {
           opacity: 1;
