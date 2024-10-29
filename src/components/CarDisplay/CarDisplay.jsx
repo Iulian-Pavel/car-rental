@@ -9,7 +9,6 @@ function CarDisplay() {
     { name: "Audi R8", img: audi, price: "30$/h" },
     { name: "Volkswagen Passat", img: passat, price: "15$/hr" },
     { name: "Toyota Yaris", img: toyota_yaris, price: "50$/hr" },
-
   ];
 
   const [selectedCar, setSelectedCar] = useState(carData[0]);
