@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { car_display, buttons, images, fadeImage } from "./cardisplay.module.scss";
+import { car_display, buttons, images, fadeImage, button } from "./cardisplay.module.scss";
 import audi from "../../assets/cars/audi_r8.png";
 import passat from "../../assets/cars/passat.png";
 import toyota_yaris from "../../assets/cars/toyota_yaris.png"
@@ -30,8 +30,7 @@ function CarDisplay() {
       <div className={car_display}>
         <div className={buttons}>
           {carData.map((car, key) => (
-            <button key={key} onClick={() => handleCarChange(car)} data-back={car.price} data-front={car.name}>
-              {car.name}
+            <button key={key} onClick={() => handleCarChange(car)} data-back={car.price} data-front={car.name} className={button}>
             </button>
           ))}
         </div>
