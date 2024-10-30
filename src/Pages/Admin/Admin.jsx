@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import InfoCard from "../../components/InfoCard/InfoCard";
-import Axios from "axios";
+import axios from "axios";
 import axiosInstance from "../../utils/interceptors";
 import {
   dashboard,
@@ -39,12 +39,13 @@ function Admin() {
       const response = await axiosInstance.post("/insert", carData);
     } catch(error) {
       console.log("An error occured while inserting car ", error);
+      console.log(response)
     }
   }
 
   const removeCar = async () => {
     try {
-      const response = Axios.delete("http://localhost:3001/remove", {
+      const response = axios.delete("http://localhost:3001/remove", {
         data: {
           make: make,
           model: model,
