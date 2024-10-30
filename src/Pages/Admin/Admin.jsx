@@ -26,6 +26,7 @@ function Admin() {
 
   const addCar = async () => {
     let carData;
+    let response;
     try {
       carData = {
         make: make,
@@ -36,7 +37,7 @@ function Admin() {
         price: price,
         linkToImage: linkToImage,
       }
-      const response = await axiosInstance.post("/insert", carData);
+      response = await axiosInstance.post("/insert", carData);
     } catch(error) {
       console.log("An error occured while inserting car ", error);
       console.log(response)
