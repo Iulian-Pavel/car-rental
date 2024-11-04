@@ -11,6 +11,33 @@ import {
   modal_close,
 } from "./admin.module.scss";
 import placeholder from "../../../images/placeholder.jpg";
+const AddCarModal = ({ isOpen, onClose, onSubmit, carForm, onChange }) => (
+  <div className={isOpen ? modal : modal_close}>
+    <div className={modal_inputs}>
+      <button onClick={onClose}>X</button>
+      <input type="text" name="make" placeholder="Make" onChange={onChange} />
+      <input type="text" name="model" placeholder="Model" onChange={onChange} />
+      <input type="text" name="year" placeholder="Year" onChange={onChange} />
+      <input type="text" name="fuelType" placeholder="Fuel Type" onChange={onChange} />
+      <input type="text" name="transmissionType" placeholder="Transmission Type" onChange={onChange} />
+      <input type="text" name="price" placeholder="Price" onChange={onChange} />
+      <input type="text" name="linkToImage" placeholder="Link to Image" onChange={onChange} />
+      <button onClick={onSubmit}>Add Car</button>
+    </div>
+  </div>
+);
+
+const RemoveCarModal = ({ isOpen, onClose, onSubmit, onChange }) => (
+  <div className={isOpen ? modal : modal_close}>
+    <div className={modal_inputs}>
+      <button onClick={onClose}>X</button>
+      <input type="text" name="make" placeholder="Make" onChange={onChange} />
+      <input type="text" name="model" placeholder="Model" onChange={onChange} />
+      <input type="text" name="year" placeholder="Year" onChange={onChange} />
+      <button onClick={onSubmit}>Remove Car</button>
+    </div>
+  </div>
+);
 
 function Admin() {
 
