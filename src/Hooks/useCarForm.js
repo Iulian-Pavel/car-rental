@@ -16,7 +16,7 @@ const useCarForm = () => {
     setCarForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  return { carForm, setCarForm, handleInputChange };
+  return { carForm, handleInputChange, setCarForm };
 };
 
 export default useCarForm;
