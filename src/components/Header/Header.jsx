@@ -1,5 +1,5 @@
 import React from "react";
-import "../../scss/header.scss";
+import "./header.scss";
 import carimg from "./header_assets/audi_img.png";
 import blob from "../../assets/blob.svg";
 

@@ -1,4 +1,4 @@
-@import "./defaults.scss";
+@import "../../scss/defaults.scss";
 
 header {
     @include createFlex(flex, space-around, center, 0, 0);
