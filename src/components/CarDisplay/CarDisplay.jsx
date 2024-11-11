@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { car_display, buttons, images, fadeImage, button } from "./cardisplay.module.scss";
+import { car_display, buttons, images, fadeImage, button, car_display_title } from "./cardisplay.module.scss";
 import audi from "../../assets/cars/audi_r8.png";
 import passat from "../../assets/cars/passat.png";
 import toyota_yaris from "../../assets/cars/toyota_yaris.png"
@@ -24,7 +24,7 @@ function CarDisplay() {
 
   return (
     <>
-      <h1>Take a look at some of our models</h1>
+      <h1 className={car_display_title}>Take a look at some of our models</h1>
       <br />
       <div className={car_display}>
         <div className={buttons}>
