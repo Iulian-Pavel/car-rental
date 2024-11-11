@@ -1,0 +1,11 @@
+@import "../../scss/defaults.scss";
+
+.hero__container {
+    border: 1px solid red;
+    .hero__content {
+        @include createFlex(flex, space-around, center, row, wrap);
+        .reasons {
+            color: red;
+        }
+    }
+}
