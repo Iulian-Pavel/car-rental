@@ -1,11 +1,29 @@
 @import "../../scss/defaults.scss";
 
 .hero__container {
-    border: 1px solid red;
-    .hero__content {
-        @include createFlex(flex, space-around, center, row, wrap);
-        .reasons {
-            color: red;
+  .hero__title {
+    text-align: center;
+  }
+  .hero__content {
+    @include createFlex(flex, space-around, center, row, wrap);
+    padding: 2em;
+    .reasons {
+      @include createFlex(flex, space-around, center, row, wrap);
+      color: red;
+      width: 70%;
+      gap: 20px;
+      .reason {
+        padding: 2em;
+        text-align: start;
+        background-color: $lightRed;
+        border-radius: 20px 32px;
+        width: 40%;
+        h1,
+        p {
+          text-align: left;
+          color: white;
         }
+      }
     }
+  }
 }
