@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Header from "../components/Header/Header";
 import CarDisplay from "../components/CarDisplay/CarDisplay";
 import HeroSection from "../components/HeroSection/HeroSection";
+import Footer from "../components/Footer/Footer";
 
 function LandingPage() {
   return (
@@ -11,6 +12,7 @@ function LandingPage() {
       <Header />
       <CarDisplay />
       <HeroSection />
+      <Footer />
     </>
   );
 }
