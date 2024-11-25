@@ -8,6 +8,7 @@ import {
 } from "./herosection.module.scss";
 import placeholder from "../../../images/placeholder.jpg";
 function HeroSection() {
+
   return (
     <>
       <br />

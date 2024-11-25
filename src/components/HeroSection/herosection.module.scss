@@ -5,7 +5,7 @@
     text-align: center;
   }
   .hero__content {
-    @include createFlex(flex, space-around, center, row, wrap);
+    @include createFlex(flex, center, center, row, wrap);
     padding: 2em;
     .reasons {
       @include createFlex(flex, space-around, center, row, wrap);
@@ -36,7 +36,19 @@
         flex-direction: column;
         width: 100%;
         .reason {
-          text-align: center;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .hero__container {
+    .hero__content {
+      .reasons {
+        .reason {
+          width: 70%;
         }
       }
     }
