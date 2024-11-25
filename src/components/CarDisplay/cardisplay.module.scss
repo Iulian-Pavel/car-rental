@@ -111,14 +111,13 @@ img:not(.fadeImage) {
   transform: scale(1);
 }
 
-
 @media screen and (max-width: 1028px) {
-  .car_display{
+  .car_display {
     flex-direction: column;
   }
 }
-//iPhone SE
-@media screen and (max-width: 375px) and (max-height: 667px) {
+
+@media screen and (max-width: 391px) {
   .car_display {
     width: 100%;
   }
