@@ -110,3 +110,15 @@ img:not(.fadeImage) {
   opacity: 1;
   transform: scale(1);
 }
+
+@media screen and (max-width: 1028px) {
+  .car_display {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 391px) {
+  .car_display {
+    width: 100%;
+  }
+}

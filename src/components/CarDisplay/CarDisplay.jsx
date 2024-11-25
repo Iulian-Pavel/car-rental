@@ -21,6 +21,7 @@ function CarDisplay() {
       setIsAnimating(false);
     }, 500);  //time to match the transition time in cardisplay.module.scss
   };
+  
 
   return (
     <>
