@@ -19,7 +19,7 @@ function CarDisplay() {
     setTimeout(() => {
       setSelectedCar(car);
       setIsAnimating(false);
-    }, 500);  //time to match the transition time in cardisplay.module.scss
+    }, 500);  //time to match the transition time in the scss file
   };
   
 
