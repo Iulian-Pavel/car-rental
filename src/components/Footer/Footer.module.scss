@@ -2,20 +2,34 @@
 
 .footer_container {
   @include createFlex(flex, space-around, center, 0, wrap);
-  border: 1px solid red;
+  color: $textGrayColor;
+  background-color: $lightRed;
   padding: 2em;
   .footer_social {
-    border: 1px solid blue;
     text-align: start;
     padding: 2em;
-  }
-  .footer_info {
-    border: 1px solid black;
-    div {
-      @include createFlex(flex, space-around, center, row, wrap);
+    p {
+      color: $textGrayColor;
+      font-size: 20px;
+    }
+    .footer_icons {
+      text-align: start;
+      margin-top: 1em;
+      span {
+        font-size: $iconWidth + 5px;
+        cursor: pointer;
+        text-align: center;
+        margin-right: 1em;
+      }
     }
   }
-  .footer_copyright {
-    border: 1px solid gray;
+  .footer_info {
+    padding: 2em;
+    div {
+      @include createFlex(flex, space-around, center, row, wrap);
+      p {
+        margin: 10px;
+      }
+    }
   }
 }
