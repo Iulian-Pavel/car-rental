@@ -2,7 +2,8 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import CarContainer from "../components/CarContainer/CarContainer";
 import { fleet } from "../scss/fleet.module.scss";
-import useFetchCarData from '../Hooks/useFetchCarData'
+import useFetchCarData from '../Hooks/useFetchCarData';
+import Footer from '../components/Footer/Footer';
 
 function OurFleet() {
 
